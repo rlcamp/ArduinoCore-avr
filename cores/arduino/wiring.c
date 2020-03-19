@@ -22,6 +22,9 @@
 
 #include "wiring_private.h"
 
+// dummy which will be replaced by linker if any of millis(), micros(), or delay() are used
+__attribute((weak)) void init_systick(void) { }
+
 void init()
 {
 	// this needs to be called before setup() or some functions won't
